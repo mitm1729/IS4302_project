@@ -1,0 +1,47 @@
+/* EnergyMonitor.css */
+
+/* Container styles */
+.energy-monitor-container {
+    background-color: var(--bg-primary);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: var(--text-color);
+  }
+  
+  /* Header styles */
+  .energy-monitor-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .energy-monitor-icon {
+    padding: 0.75rem;
+    background-color: var(--primary-color);
+    border-radius: 9999px;
+  }
+  
+  .energy-monitor-title {
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+  
+  .energy-monitor-value {
+    font-size: 1.875rem;
+    font-weight: 600;
+  }
+  
+  /* Chart container */
+  .energy-monitor-chart {
+    height: 16rem; /* Equivalent to h-64 in Tailwind */
+  }
+  
+  /* Tooltip styles */
+  .custom-tooltip {
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    color: var(--text-primary);
+  }

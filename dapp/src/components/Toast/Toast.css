@@ -1,0 +1,71 @@
+/* Toast.css */
+
+/* Container styles for the Toast component */
+.toast-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 20rem; /* Adjust based on your desired width */
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transform: translateY(0);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  /* Dark mode for Toast */
+  .toast-container.dark {
+    background-color: #1f2937;
+    border-color: #4b5563;
+  }
+  
+  .toast-text {
+    margin-left: 0.75rem;
+    flex: 1;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #1f2937;
+  }
+  
+  .toast-text.dark {
+    color: #ffffff;
+  }
+  
+  /* Close button styles */
+  .toast-close-btn {
+    margin-left: 1rem;
+    background: none;
+    border: none;
+    color: #9ca3af;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    transition: color 0.2s;
+  }
+  
+  .toast-close-btn:hover {
+    color: #6b7280;
+  }
+  
+  .toast-close-btn:focus {
+    outline: none;
+  }
+  
+  /* Animation */
+  @keyframes slideIn {
+    from {
+      transform: translateY(-20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  .toast-container {
+    animation: slideIn 0.3s ease-in-out;
+  }

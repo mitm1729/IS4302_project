@@ -1,0 +1,30 @@
+{
+  "name": "is4302_project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.3.0",
+    "@truffle/hdwallet-provider": "^2.1.15",
+    "body-parser": "^1.20.3",
+    "chart.js": "^4.4.6",
+    "clear": "^0.1.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "jsonwebtoken": "^9.0.2",
+    "knex": "^3.1.0",
+    "react-chartjs-2": "^5.2.0",
+    "sqlite3": "^5.1.7",
+    "ws": "^8.18.0"
+  }
+}

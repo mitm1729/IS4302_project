@@ -1,0 +1,266 @@
+/* Enhanced Smart Home Styles */
+
+
+/* Main Layout Fixes */
+.house-page {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar-house {
+  padding: 24px;
+  background-color: var(--bg-primary);
+  border-right: 1px solid var(--border-color);
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  border-radius: 20px;
+}
+
+.main-content {
+  flex: 1;
+  padding: 24px;
+  overflow-y: auto;
+}
+
+/* Sidebar Components */
+.sidebar-house-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.sidebar-house-title {
+  font-size: 20px;
+  margin: 0;
+  flex: 1;
+}
+
+.search-bar {
+  position: relative;
+  margin-bottom: 16px;
+}
+
+.sidebar-house .search-input {
+  width: 100%;
+  padding: 8px 40px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background-color: var(--bg-secondary);
+}
+
+.search-icon {
+  position: absolute;
+  left: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-secondary);
+}
+
+/* Room Grid Layout */
+.rooms-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+  margin-top: 24px;
+}
+
+/* Device Section */
+.devices-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.device-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  background-color: var(--bg-secondary);
+  border-radius: 8px;
+}
+
+.device-controls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Button Styles */
+.icon-button {
+  background: none;
+  border: none;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: var(--text-primary);
+}
+
+.icon-button:hover {
+  background-color: var(--bg-secondary);
+}
+
+.add-room-section {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.room-input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background-color: var(--bg-secondary);
+}
+
+.add-room-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+
+/* Base Layout */
+.house-page {
+  display: flex;
+  min-height: 100vh;
+  color: var(--text-primary);
+  transition: var(--transition-base);
+}
+
+/* Notifications Section */
+.notifications-section {
+  background-color: var(--bg-primary);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 24px;
+  box-shadow: var(--shadow-sm);
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  margin: 0 0 16px;
+}
+
+.notifications-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.notification-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 8px;
+  background-color: var(--bg-secondary);
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.notification-item small {
+  color: var(--text-secondary);
+}
+
+/* Theme Toggle */
+.theme-toggle {
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  transition: var(--transition-base);
+}
+
+.theme-toggle:hover {
+  background-color: var(--bg-secondary);
+}
+
+/* Responsive Enhancements */
+@media (max-width: 1024px) {
+  .house-page {
+    flex-direction: column;
+  }
+
+  .sidebar-house {
+    height: 25vh;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+    background-color: var(--bg-primary);
+  }
+
+  .rooms-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .room-stats {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .device-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .device-controls {
+    width: 100%;
+    margin-top: 8px;
+  }
+}
+
+/* Animation Keyframes */
+@keyframes slideIn {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.notification-item {
+  animation: slideIn 0.3s ease-out;
+}
+
+/* Accessibility Enhancements */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

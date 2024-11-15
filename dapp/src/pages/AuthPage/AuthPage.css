@@ -1,0 +1,94 @@
+.auth-container {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    color: white;
+  }
+  
+  .background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1; /* Ensure it stays behind the content */
+  }
+  
+  .login-box {
+    display: flex;
+    padding: 20px;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    background-color: rgba(93, 93, 93, 0.7); /* Slightly opaque background */
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    flex-direction: column;
+    row-gap: 50px;
+  }
+  
+  h1 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+  }
+  
+  p {
+    margin-bottom: 20px;
+  }
+  
+  .auth-button {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .auth-button:hover {
+    background-color: #444;
+  }
+  
+  .auth-button:disabled {
+    background-color: #888;
+    cursor: not-allowed;
+  }
+  
+  .auth-button .icon {
+    margin-right: 10px;
+    width: 24px;
+    height: 24px;
+  }
+  
+  .auth-button.metamask {
+    background-color: #f6851b;
+  }
+  
+  .auth-button.coinbase {
+    background-color: #3150c1;
+  }
+  
+  .auth-button.email {
+    background-color: #d93b27;
+  }
+
+  .button-box {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .title-box {
+    flex-direction: column;
+    display: flex;
+  }

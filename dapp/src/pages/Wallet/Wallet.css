@@ -1,0 +1,172 @@
+.wallet-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.wallet-connect {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 600px;
+  padding: 20px;
+}
+
+.wallet-card {
+  background: var(--bg-primary);
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+  width: 100%;
+  color: var(--text-primary);
+}
+
+.wallet-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.wallet-header h2 {
+  margin: 0;
+  font-size: 24px;
+}
+
+/* Button Styles */
+.connect-button,
+.disconnect-button,
+.action-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.2s;
+}
+
+.connect-button {
+  background-color: #4f46e5;
+  color: white;
+  width: 100%;
+  max-width: 300px;
+  margin-top: 20px;
+}
+
+.disconnect-button {
+  background-color: #ef4444;
+  color: white;
+}
+
+.action-button {
+  background-color: #4f46e5;
+  color: white;
+  min-width: 100px;
+}
+
+button:disabled {
+  background-color: #9ca3af;
+  cursor: not-allowed;
+}
+
+/* Account and Balance Sections */
+.account-info,
+.balance-info {
+  background-color: #f3f4f6;
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.account-info label,
+.balance-info label {
+  display: block;
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 4px;
+}
+
+.account-address {
+  font-size: 14px;
+  word-break: break-all;
+  color: #374151;
+  margin: 0;
+}
+
+.balance-amount {
+  font-size: 24px;
+  font-weight: bold;
+  color: #374151;
+  margin: 0;
+}
+
+/* Transaction Sections */
+.transaction-section {
+  margin-bottom: 20px;
+}
+
+.transaction-section label {
+  display: block;
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 8px;
+}
+
+.input-group {
+  display: flex;
+  gap: 12px;
+}
+
+input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+input:disabled {
+  background-color: #f3f4f6;
+  cursor: not-allowed;
+}
+
+/* Status Messages */
+.status-message {
+  padding: 12px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.status-message.error {
+  background-color: #fef2f2;
+  color: #dc2626;
+  border: 1px solid #fecaca;
+}
+
+.status-message.success {
+  background-color: #f0fdf4;
+  color: #16a34a;
+  border: 1px solid #dcfce7;
+}
+
+.status-message.info {
+  background-color: #eff6ff;
+  color: #2563eb;
+  border: 1px solid #dbeafe;
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+  .wallet-container {
+    margin: 20px auto;
+  }
+
+  .input-group {
+    flex-direction: column;
+  }
+
+  .action-button {
+    width: 100%;
+  }
+}
