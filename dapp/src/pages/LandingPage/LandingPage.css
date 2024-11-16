@@ -98,6 +98,7 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   gap: 2rem;
   padding: 2rem 2rem;
+  margin: 5rem 5rem;
 }
 
 .feature {

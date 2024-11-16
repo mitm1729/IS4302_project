@@ -35,36 +35,37 @@
     gap: 16px;
   }
   
-  .modal-form
+  .device-modal
   .form-group {
     display: flex;
     flex-direction: column;
     gap: 4px;
   }
-  .modal-form
+  .device-modal
   .form-group label {
     font-size: 0.875rem;
     font-weight: 500;
     margin: 10px 0;
   }
 
-  .modal-form
+  .device-modal
   .form-group input,
-  .form-group select {
+  .device-modal .form-group select {
     padding: 8px 12px;
     border: 1px solid var(--border-color);
     border-radius: 4px;
     font-size: 0.875rem;
   }
   
-  .modal-form
+  .device-modal
   .form-group input:focus,
-  .form-group select:focus {
+  .device-modal .form-group select:focus {
     outline: none;
     border-color: #2563eb;
     box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.1);
   }
-  .modal-form
+
+  .device-modal 
   .modal-actions {
     display: flex;
     justify-content: flex-end;
@@ -73,7 +74,7 @@
   }
 
   /* Button Styles */
-.button {
+  .device-modal .button {
     padding: 8px 16px;
     border-radius: 4px;
     font-size: 0.875rem;
@@ -82,23 +83,23 @@
     transition: all 0.2s;
   }
   
-  .button.primary {
+  .device-modal .button.primary {
     background-color: var(--primary-color);
     color: white;
     border: none;
   }
   
-  .button.primary:hover {
+  .device-modal .button.primary:hover {
     background-color: var(--primary-hover);
   }
   
-  .button.secondary {
+  .device-modal .button.secondary {
     background-color: white;
     color: #374151;
     border: 1px solid #ddd;
   }
   
-  .button.secondary:hover {
+  .device-modal .button.secondary:hover {
     background-color: #f3f4f6;
   }
   

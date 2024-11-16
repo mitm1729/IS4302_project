@@ -117,7 +117,7 @@ button:disabled {
   gap: 12px;
 }
 
-input {
+.wallet-container input {
   flex: 1;
   padding: 10px;
   border: 1px solid #d1d5db;
@@ -125,7 +125,7 @@ input {
   font-size: 16px;
 }
 
-input:disabled {
+.wallet-container input:disabled {
   background-color: #f3f4f6;
   cursor: not-allowed;
 }

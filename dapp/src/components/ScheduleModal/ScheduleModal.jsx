@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Clock } from 'lucide-react';
 import './ScheduleModal.css';
+
 const ScheduleModal = ({ room, onClose, onSave }) => {
     const [schedules, setSchedules] = useState(room.schedule);
     const [newTime, setNewTime] = useState('');
