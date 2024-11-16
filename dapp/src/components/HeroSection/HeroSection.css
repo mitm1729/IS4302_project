@@ -1,0 +1,227 @@
+/* Hero Section */
+.hero {
+    background: var(--text-primary);
+    color: var(--bg-primary);
+    background-size: 200% 200%;
+    animation: gradientBG 15s ease infinite;
+    min-height: calc(100vh - 80px);
+    padding: 4rem 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;;
+  }
+  
+  .hero-content {
+    flex: 1;
+    max-width: 600px;
+    color: var(--text-dark);
+  }
+  
+  .hero-content h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+  }
+  
+  .hero-content p {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    margin-bottom: 2rem;
+    opacity: 0.9;
+  }
+  
+  .hero-image {
+    flex: 1;
+    max-width: 500px;
+    height: auto;
+    animation: float 6s ease-in-out infinite;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+  }
+  
+
+  .cta-button {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    border: none;
+    padding: 1.5rem 2.5rem;
+    font-size: 2rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .cta-button:hover {
+    background-color: var(--selected-primary);
+  }
+
+  .globe-background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+  }
+  
+  /* .point {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: #007bff;
+    border-radius: 50%;
+    transform-origin: center;
+    margin-left: -4px;
+    margin-top: -4px;
+  }
+  
+  .connection-line {
+    position: absolute;
+    height: 1px;
+    background: #007bff;
+    transform-origin: left center;
+  } */
+
+  .globe-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    perspective: 2000px; /* Stronger 3D perspective */
+    padding-right: 10rem;
+  }
+  
+  .globe {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    transform-style: preserve-3d;
+    animation: rotateGlobe 30s linear infinite;
+  }
+  
+  /* Enhanced 3D effect on the sphere */
+  .earth-sphere {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, 
+      rgb(29, 83, 149) 0%, /* Deep ocean blue */
+      rgba(23, 58, 100, 1) 50%, 
+      rgba(11, 29, 50, 1) 100% /* Dark ocean */
+    );
+    box-shadow: 
+      inset -40px -40px 70px rgba(0, 0, 0, 0.5),
+      inset 30px 30px 70px rgba(255, 255, 255, 0.1),
+      0 0 150px rgba(23, 58, 100, 0.4); /* Glow for more realism */
+  }
+  
+/* Grass patches layer */
+/* Grass patches layer for globe */
+.land-pattern {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+    background:
+      /* Randomly placed land patches using radial gradients */
+      radial-gradient(circle at 25% 20%, rgba(34, 139, 34, 0.8) 10%, transparent 30%),
+      radial-gradient(circle at 70% 60%, rgba(34, 139, 34, 0.6) 15%, transparent 30%),
+      radial-gradient(circle at 50% 50%, rgba(34, 139, 34, 0.9) 20%, transparent 50%),
+      radial-gradient(circle at 80% 30%, rgba(34, 139, 34, 0.7) 10%, transparent 25%),
+      radial-gradient(circle at 15% 80%, rgba(34, 139, 34, 0.5) 15%, transparent 30%),
+      radial-gradient(circle at 40% 40%, rgba(34, 139, 34, 0.6) 15%, transparent 35%),
+      radial-gradient(circle at 60% 70%, rgba(34, 139, 34, 0.6) 10%, transparent 25%),
+      radial-gradient(circle at 10% 10%, rgba(34, 139, 34, 0.8) 5%, transparent 15%);
+    
+    background-size: 100% 100%;
+    background-position: center;
+    
+    /* Mask to ensure only the circular globe part is visible */
+    mask-image: radial-gradient(circle, transparent 60%, rgba(0, 0, 0, 1) 100%);
+    -webkit-mask-image: radial-gradient(circle, transparent 60%, rgba(0, 0, 0, 1) 100%);
+  
+    /* Apply blending for better realism */
+    mix-blend-mode: multiply;
+    
+    /* Create a 3D effect on the land pattern */
+    transform: rotateY(0deg) translateZ(3px);
+  }
+  
+  
+  /* Enhanced gloss for realism */
+  .earth-gloss {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, 
+      rgba(120, 120, 120, 0.5) 0%, 
+      rgba(255, 255, 255, 0.2) 50%, 
+      rgba(0, 0, 0, 0) 100%
+    );
+    pointer-events: none;
+    mix-blend-mode: screen;
+  }
+  
+  /* Adds depth to the globe */
+  .globe-shadow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: radial-gradient(circle at 50% 50%, 
+      rgba(0, 0, 0, 0.5) 60%, 
+      transparent 100%);
+    transform: translateZ(-5px); /* Slight depth for the shadow layer */
+  }
+  
+  /* Bubble points for markers */
+  .bubble-point {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    transform-style: preserve-3d;
+    transform: translate(-50%, -50%);
+  }
+  
+  .bubble-inner {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%,
+      rgba(255, 255, 255, 0.8) 0%,
+      rgba(148, 187, 233, 0.6) 50%,
+      rgba(91, 151, 223, 0.4) 100%
+    );
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5),
+                inset 2px 2px 4px rgba(255, 255, 255, 0.8),
+                inset -2px -2px 4px rgba(0, 0, 0, 0.2);
+  }
+
+  .bubble-inner img {
+    max-width: 20px;
+    max-height: auto;
+  }
+  
+  @keyframes rotateGlobe {
+    from {
+      transform: rotateY(0deg);
+    }
+    to {
+      transform: rotateY(360deg);
+    }
+  }
+  
+  @keyframes rotateGlobe {
+    from {
+      transform: rotateY(0deg);
+    }
+    to {
+      transform: rotateY(360deg);
+    }
+  }

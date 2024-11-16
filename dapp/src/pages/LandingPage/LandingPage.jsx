@@ -1,73 +1,95 @@
-import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React from 'react';
 import './LandingPage.css';
-import videoSrc from '../../assets/house_sitting.mp4';
+import keygif from "../../assets/key.gif";
+import { motion } from 'framer-motion';
+import { Home, Shield, Globe, Clock, Mail, Phone, MapPin } from 'lucide-react';
+import ContactForm from '../../components/ContactForm/ContactForm';
+import HeroSection from '../../components/HeroSection/HeroSection';
 
 const LandingPage = () => {
-  const [zoomLevel, setZoomLevel] = useState(1);
-  const navigate = useNavigate();
-
-  const handleScroll = (event) => {
-    const deltaY = event.deltaY;
-    const zoomChange = deltaY > 0 ? 0.1 : -0.1;
-
-    setZoomLevel((prevZoomLevel) => {
-      const newZoomLevel = Math.min(Math.max(prevZoomLevel + zoomChange, 1), 3);
-
-      if (newZoomLevel === 3) {
-        setTimeout(() => navigate('/auth'), 500); 
-      }
-
-      return newZoomLevel;
-    });
-  };
-
-  useEffect(() => {
-    window.addEventListener('wheel', handleScroll);
-    return () => window.removeEventListener('wheel', handleScroll);
-  }, []);
+  
 
   return (
-    <div
-      className="landing-page"
-      style={{
-        transform: `scale(${zoomLevel})`,
-        opacity: zoomLevel === 1 ? 1 : 1 - (zoomLevel - 1) / 2,
-      }}
-    >
-      <video autoPlay loop muted className="background-video">
-        <source src={videoSrc} type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-
-      <div className="banner">
-        <h1 className="banner-title">TaskMate</h1>
-        <p className="banner-description">Find trusted house sitters. Scroll to explore.</p>
-      </div>
-
-      <footer className="footer">
-      <div className="footer">
-          <span>TaskMate | © 2024 YourCompany </span>
-
-          <span className="credits">
-            Credits:
-            <a
-              href="https://www.freepik.com/free-video/woman-with-keys-new-house_2808915#fromView=search&page=1&position=31&uuid=1ee69492-c0dc-43ee-905b-b3a567762a0f"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Freepik
-            </a>
-            <span>|</span>
-            <a href="https://iconscout.com/icons/metamask" target="_blank">
-              MetaMask
-            </a>
-            <span>|</span>
-            <a href="https://iconscout.com/contributors/icon-mafia" target="_blank">
-              Icon Mafia
-            </a>
-          </span>
+    <div className="landing-page">
+      <header className="header">
+        <div className="logo">
+          <h1>TaskMate</h1>
         </div>
+        <nav className="nav">
+          <a href="#features">Features</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+          <a href="/auth">Login</a>
+        </nav>
+      </header>
+
+      {/* Hero Section */}
+      <HeroSection></HeroSection>
+
+      {/* Features Section */}
+      <section id="features" className="features">
+  <motion.div
+    className="feature"
+    whileHover={{ scale: 1.05 }}
+    initial={{ opacity: 0, y: 50 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ delay: 0.2 }}
+  >
+    <Shield size={48} className="feature-icon" />
+    <h3>Verified Sitters</h3>
+    <p>Every sitter is vetted and reviewed to ensure the highest level of trust.</p>
+  </motion.div>
+  <motion.div
+    className="feature"
+    whileHover={{ scale: 1.05 }}
+    initial={{ opacity: 0, y: 50 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ delay: 0.4 }}
+  >
+    <Clock size={48} className="feature-icon" />
+    <h3>24/7 Support</h3>
+    <p>Get assistance whenever you need it with our around-the-clock service.</p>
+  </motion.div>
+  <motion.div
+    className="feature"
+    whileHover={{ scale: 1.05 }}
+    initial={{ opacity: 0, y: 50 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ delay: 0.6 }}
+  >
+    <Globe size={48} className="feature-icon" />
+    <h3>Global Coverage</h3>
+    <p>Connect with sitters across the globe for seamless solutions.</p>
+  </motion.div>
+</section>
+
+      {/* About Section */}
+      <section id="about" className="about">
+        <h1>About Us</h1>
+        <div className="about-content">
+          <img
+            src={keygif}
+            alt="About us"
+            className="about-image"
+          />
+          <div className="about-text">
+            <p>
+              TaskMate was founded with a simple mission: to connect homeowners with reliable house sitters. 
+              Whether you’re traveling for business or pleasure, our platform ensures peace of mind while 
+              you’re away from home.
+            </p>
+            <p>
+              We’ve built a trusted community of sitters and homeowners by prioritizing security, transparency, 
+              and convenience. Join thousands of satisfied customers who have experienced the TaskMate difference.
+            </p>
+          </div>
+        </div>
+      </section>
+      <ContactForm></ContactForm>
+
+      {/* Footer */}
+      <footer className="footer">
+        <p>&copy; 2024 TaskMate. All rights reserved.</p>
       </footer>
     </div>
   );

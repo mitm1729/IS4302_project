@@ -7,13 +7,17 @@
 
 /* Theme Variables */
 :root {
+  --gradient-1: linear-gradient(45deg, #0a2b34, #082e37);
+  --gradient-2: linear-gradient(45deg, #ff4b1f, #ff9068);
+  --text-dark: #ffffff;
+  --text-light: #626262;
   --primary-color: #2563eb;
   --primary-hover: #1d4ed8;
   --success-color: #10b981;
   --warning-color: #f59e0b;
   --error-color: #ef4444;
   --text-primary: #111827;
-  --text-secondary: #4b5563;
+  --text-secondary: #a7a7a7;
   --selected-primary: #a7c9ef;
   --bg-primary: #ffffff;
   --bg-secondary: #f3f4f6;
@@ -29,6 +33,8 @@
   --primary-hover: #60a5fa;
   --text-primary: #f3f4f6;
   --text-secondary: #9ca3af;
+  --text-dark: #8d8c8c;
+  --text-light: #fff;
   --bg-primary: #1f2937;
   --bg-secondary: #374151;
   --border-color: #4b5563;

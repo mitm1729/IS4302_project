@@ -96,7 +96,7 @@
     background-color: #95a5a6;
   }
   
-  .contact-info {
+  .chat-layout .contact-info {
     flex: 1;
     overflow: hidden;
   }
